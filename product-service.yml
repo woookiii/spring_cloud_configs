@@ -1,0 +1,6 @@
+kafka:
+  kafka-server: localhost:9092
+  consumer:
+    group-id: product-group #group id is for consumer group indentifier, consumers which possess same group id are round-robining consume messages (producer - consumer), this is useful setting when auto-scaling server
+    # if one topic is listened by consumers which possess different group id, same message will deliver both consumers (pub-sub), attaching random number logic could work
+    auto-offset-reset: earliest #message reading from message which came first at kafka(latest: reading only messages from now on) when server restart consume
