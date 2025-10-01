@@ -6,6 +6,11 @@ server:
   #if I do 0, spring automatically porting
   port: 0
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/ordermsa?useSSL=false&allowPublicKeyRetrieval=true
@@ -22,3 +27,6 @@ spring:
     redis:
       host: localhost
       port: 6379
+  cloud:
+    bus:
+      enabled: true
